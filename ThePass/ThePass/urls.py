@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('submitData/', submitData),
     path('submitData/<int:id>/', get_submitData),
+    path('submitData/patch/<int:id>/', patch_submitData),
 ]
