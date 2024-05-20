@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b37ee30-8c44-4cb7-aeb2-328893f6d4d7" name="Changes" comment="get_submitData готов">
+    <list default="true" id="2b37ee30-8c44-4cb7-aeb2-328893f6d4d7" name="Changes" comment="patch_submitData готов">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ThePass/ThePass/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ThePass/ThePass/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ThePass/ThePass/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ThePass/ThePass/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ThePass/pereval/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ThePass/pereval/views.py" afterDir="false" />
     </list>
@@ -109,7 +110,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716198394193</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="patch_submitData готов">
+      <option name="closed" value="true" />
+      <created>1716199478803</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1716199478803</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -128,6 +137,7 @@
     <MESSAGE value="Модели + сериалайзеры" />
     <MESSAGE value="submitData готов" />
     <MESSAGE value="get_submitData готов" />
-    <option name="LAST_COMMIT_MESSAGE" value="get_submitData готов" />
+    <MESSAGE value="patch_submitData готов" />
+    <option name="LAST_COMMIT_MESSAGE" value="patch_submitData готов" />
   </component>
 </project>
