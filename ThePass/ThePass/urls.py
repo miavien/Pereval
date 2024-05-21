@@ -15,9 +15,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, re_path, include
+from django.urls import path, include
 from pereval.views import *
 from rest_framework.routers import DefaultRouter
+from .yasg import urlpatterns as doc_urls
 
 router = DefaultRouter()
 router.register(r'submitData', PerevalViewSet, basename='submitData')
@@ -29,3 +30,5 @@ urlpatterns = [
     path('submitData/patch/<int:id>/', patch_submitData),
     path('', include(router.urls)),
 ]
+
+urlpatterns += doc_urls
