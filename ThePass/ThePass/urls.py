@@ -21,13 +21,10 @@ from rest_framework.routers import DefaultRouter
 from .yasg import urlpatterns as doc_urls
 
 router = DefaultRouter()
-router.register(r'submitData', PerevalViewSet, basename='submitData')
+router.register(r'pereval', PerevalViewSet, basename='pereval')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('submitData/post/', submitData),
-    path('submitData/<int:id>/', get_submitData),
-    path('submitData/patch/<int:id>/', patch_submitData),
     path('', include(router.urls)),
 ]
 
