@@ -12,6 +12,14 @@ class PerevalViewSet(viewsets.ModelViewSet):
     serializer_class = PerevalSerializer
     filterset_fields = ['user__email']
 
+    #убираем нереализованные методы delete, put
+    @swagger_auto_schema(auto_schema=None)
+    def update(self, request, *args, **kwargs):
+        pass
+    @swagger_auto_schema(auto_schema=None)
+    def destroy(self, request, *args, **kwargs):
+        pass
+
     def create(self, request, *args, **kwargs):
         try:
             serializer = PerevalSerializer(data=request.data)
@@ -33,11 +41,13 @@ class PerevalViewSet(viewsets.ModelViewSet):
 
     def partial_update(self, request, *args, **kwargs):
         try:
-            pereval = Pereval.objects.get(id=id)
+            pereval = self.get_object()
         except Pereval.DoesNotExist:
             return Response({"state": 0, "message": "Запись с таким id не найдена"})
+
         if pereval.status != 'new':
             return Response({"state": 0, "message": "Можно редактировать записи только в статусе 'new'"})
+
         data = request.data.copy()
         for field in ['email', 'fam', 'name', 'otc', 'phone']:
             data.pop(field, None)
@@ -48,23 +58,3 @@ class PerevalViewSet(viewsets.ModelViewSet):
             return Response({"state": 1, "message": "Запись успешно обновлена"})
         else:
             return Response({"state": 0, "message": serializer.errors})
-
-
-# @api_view(['PATCH'])
-# def patch_submitData(request, id):
-#     try:
-#         pereval = Pereval.objects.get(id=id)
-#     except Pereval.DoesNotExist:
-#         return Response({"state": 0, "message": "Запись с таким id не найдена"})
-#     if pereval.status != 'new':
-#         return Response({"state": 0, "message": "Можно редактировать записи только в статусе 'new'"})
-#     data = request.data.copy()
-#     for field in ['email', 'fam', 'name', 'otc', 'phone']:
-#         data.pop(field, None)
-#
-#     serializer = PerevalSerializer(pereval, data=data, partial=True)
-#     if serializer.is_valid():
-#         serializer.save()
-#         return Response({"state": 1, "message": "Запись успешно обновлена"})
-#     else:
-#         return Response({"state": 0, "message": serializer.errors})
