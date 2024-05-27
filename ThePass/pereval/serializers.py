@@ -29,4 +29,4 @@ class PerevalSerializer(WritableNestedModelSerializer):
     images = ImageSerializer(many=True)
     class Meta:
         model = Pereval
-        fields = ['beauty_title', 'title', 'other_titles', 'connect', 'add_time', 'user', 'coords', 'level', 'images', 'status']
+        fields = ['id', 'beauty_title', 'title', 'other_titles', 'connect', 'add_time', 'user', 'coords', 'level', 'images', 'status']
