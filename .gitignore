@@ -1,0 +1,4 @@
+ThePass/.env
+.htmlcov
+.coverage
+.idea
